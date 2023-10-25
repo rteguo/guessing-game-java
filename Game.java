@@ -12,20 +12,22 @@ public class Game {
     System.out.println("Enter your name:");
     String name = inputName.nextLine();
 
-    while (1 == 1){
+    boolean findGuess = false;
+
+    while (!findGuess){
       Scanner inputGuess = new Scanner(System.in);
       System.out.println("Enter your guess:");
       String guessNum = inputGuess.nextLine();
-
+      count += 1;
       if(Integer.parseInt(guessNum) > myInt){
         System.out.println("Your guess is too high, try again.");
       }else if(Integer.parseInt(guessNum) < myInt){
         System.out.println("Your guess is too low, try again.");
       }else{
         System.out.println("Well done, "+name+"! You found my number in "+ count +" tries!");
-        break;
+        findGuess = true;
       }
-      count += 1;
+      
     }
     
 
